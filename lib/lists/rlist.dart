@@ -1,17 +1,11 @@
-import 'package:json_annotation/json_annotation.dart';
+// ignore_for_file: public_member_api_docs, collection_methods_unrelated_type
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:json_annotation/json_annotation.dart';
 part 'rlist.g.dart';
-
-@visibleForTesting
-Map<String, RList> db = {};
-
-
 
 @JsonSerializable()
 class RList extends Equatable {
   const RList({required this.id, required this.name});
-
 
   factory RList.fromJson(Map<String, dynamic> json) => _$RListFromJson(json);
 
@@ -33,20 +27,3 @@ class RList extends Equatable {
     );
   }
 }
-
-
-// // import 'package:equatable/equatable.dart';
-
-// // Map<String, RList> db = {};
-
-// // class RList extends Equatable{
-// //   const RList({required this.id, required this.name});
-
-// // final String id;
-// // final String name;
-
-// //   @override
-// //   // TODO: implement props
-// //   List<Object?> get props => [id,name];
-
-// // }
