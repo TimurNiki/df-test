@@ -1,12 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meta/meta.dart';
 part 'item_rep.g.dart';
 
-@visibleForTesting
 
-/// Data source - in-memory cache
-Map<String, Item> itemDb = {};
 
 @JsonSerializable()
 

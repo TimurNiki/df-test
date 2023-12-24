@@ -3,11 +3,10 @@ import 'package:first_project/extension/hash_extension.dart';
 import 'package:meta/meta.dart';
 import '../lists/rlist.dart';
 
+final db = <String, RList>{};
 
-@visibleForTesting
-Map<String, RList> db = {};
 
-class RListRep {
+final class RListRep {
   Future<RList?> listById(String id) async {
     return db[id];
   }

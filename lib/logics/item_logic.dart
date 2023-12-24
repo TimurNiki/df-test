@@ -1,13 +1,12 @@
-
+// ignore_for_file: public_member_api_docs
 import 'package:first_project/extension/hash_extension.dart';
-
 import '../items/item_rep.dart';
 
-Map<String, Item> itemDb = {};
+final itemDb = <String, Item>{};
+
 /// Repository class for Item
 ///
-class ItemRepository {
-  
+final class ItemRepository {
   /// Check in the internal data source for an item with the given [id
   Future<Item?> itemById(String id) async {
     return itemDb[id];
@@ -57,13 +56,13 @@ class ItemRepository {
         description: description,
         status: status);
 
-    /// add a new Tasklist object to our data source
+    /// add a new list object to our data source
     itemDb[id] = item;
 
     return id;
   }
 
-  /// Deletes the Taskitem object with the given [id]
+  /// Deletes the item object with the given [id]
   void deleteItem(String id) {
     itemDb.remove(id);
   }
@@ -76,17 +75,18 @@ class ItemRepository {
     required String description,
     required bool status,
   }) async {
-    final currentitem = itemDb[id];
+    final currentItem = itemDb[id];
 
-    if (currentitem == null) {
+    if (currentItem == null) {
       return Future.error(Exception('Item not found'));
     }
 
     itemDb[id] = Item(
-        id: id,
-        name: name,
-        listid: listid,
-        description: description,
-        status: status);
+      id: id,
+      name: name,
+      listid: listid,
+      description: description,
+      status: status,
+    );
   }
 }
